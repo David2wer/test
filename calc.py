@@ -1,30 +1,34 @@
 def Calculator(a,b,vibor):
-    if znac == 1:
+    if vibor == "+":
         return str(a+b)
-    elif znac == 2:
+    elif vibor == "-":
         return str(a-b)
-    elif znac == 3:
+    elif vibor == "/":
         if b == 0:
             return "dont"
         else:
             return str(a/b)
         
-    elif znac == 4:
+    elif vibor == "*":
         return str(a*b)
     else:
         return "!"
     
-a = b = znac = 0
 while True:
-    znac=int(input("+=1, -=2, /=3, *=4, exit=5"))
-    if znac == 5:
+    primer = (input("Pishi primer cherez probel esli stop off: "))
+    primeru = primer.split(" ")
+    if primeru[0] == "off":
         break
-    a=int(input("first number"))
-    a=int(input("second number"))
-    print("Answer:"Calculator(a,b,znac))
-
-    
-        
-    
-
+    #try:
+    a=int(primeru[0])
+    b=int(primeru[2])
+    right_answer = Calculator(a,b,primeru[1]) 
+    answer = input("Poprobui otwetit sam")
+    print("Right Answer: ",right_answer)
+    if answer == right_answer:
+        print("Krasavchik")
+    else:
+        print("Ychi matematicu")
+    #except:
+        #print("Pishi normalno")
     
